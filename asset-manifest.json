@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Rahma1205/MedTrade.git/static/css/main.ab25cc25.css",
+    "main.js": "/Rahma1205/MedTrade.git/static/js/main.33a70f61.js",
+    "static/js/453.d5a43cd9.chunk.js": "/Rahma1205/MedTrade.git/static/js/453.d5a43cd9.chunk.js",
+    "static/media/fa-solid-900.ttf": "/Rahma1205/MedTrade.git/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
+    "static/media/fa-brands-400.ttf": "/Rahma1205/MedTrade.git/static/media/fa-brands-400.1815e00441357e01619e.ttf",
+    "static/media/16x9_M.jpg": "/Rahma1205/MedTrade.git/static/media/16x9_M.d6637f2da4be7044c3b5.jpg",
+    "static/media/fa-solid-900.woff2": "/Rahma1205/MedTrade.git/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
+    "static/media/fa-brands-400.woff2": "/Rahma1205/MedTrade.git/static/media/fa-brands-400.c210719e60948b211a12.woff2",
+    "static/media/fa-regular-400.ttf": "/Rahma1205/MedTrade.git/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
+    "static/media/notfound.jpg": "/Rahma1205/MedTrade.git/static/media/notfound.dcd31ba585e2c61091ee.jpg",
+    "static/media/fa-regular-400.woff2": "/Rahma1205/MedTrade.git/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
+    "static/media/fa-v4compatibility.ttf": "/Rahma1205/MedTrade.git/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
+    "static/media/fa-v4compatibility.woff2": "/Rahma1205/MedTrade.git/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
+    "index.html": "/Rahma1205/MedTrade.git/index.html",
+    "main.ab25cc25.css.map": "/Rahma1205/MedTrade.git/static/css/main.ab25cc25.css.map",
+    "main.33a70f61.js.map": "/Rahma1205/MedTrade.git/static/js/main.33a70f61.js.map",
+    "453.d5a43cd9.chunk.js.map": "/Rahma1205/MedTrade.git/static/js/453.d5a43cd9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ab25cc25.css",
+    "static/js/main.33a70f61.js"
+  ]
+}
