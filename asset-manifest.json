@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MedTrade/static/css/main.3fdc9349.css",
-    "main.js": "/MedTrade/static/js/main.eeb436bf.js",
+    "main.js": "/MedTrade/static/js/main.6cc9f824.js",
     "static/js/453.d5a43cd9.chunk.js": "/MedTrade/static/js/453.d5a43cd9.chunk.js",
     "static/media/fa-solid-900.ttf": "/MedTrade/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
     "static/media/fa-brands-400.ttf": "/MedTrade/static/media/fa-brands-400.1815e00441357e01619e.ttf",
@@ -15,11 +15,11 @@
     "static/media/fa-v4compatibility.woff2": "/MedTrade/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/MedTrade/index.html",
     "main.3fdc9349.css.map": "/MedTrade/static/css/main.3fdc9349.css.map",
-    "main.eeb436bf.js.map": "/MedTrade/static/js/main.eeb436bf.js.map",
+    "main.6cc9f824.js.map": "/MedTrade/static/js/main.6cc9f824.js.map",
     "453.d5a43cd9.chunk.js.map": "/MedTrade/static/js/453.d5a43cd9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3fdc9349.css",
-    "static/js/main.eeb436bf.js"
+    "static/js/main.6cc9f824.js"
   ]
 }
