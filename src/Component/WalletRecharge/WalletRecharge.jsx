@@ -99,7 +99,7 @@ const PaymentPage = ({ userEmail }) => {
         style={{ marginBottom: '10px' }}
       />
       <br />
-      <button id="payButton" onClick={handleClick}>
+      <button type='submit' id="payButton" >
         Pay Now
       </button>
     </div>

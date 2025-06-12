@@ -2,7 +2,6 @@
   "name": "grad-project",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://medtrade.wghtk.com",
 "homepage": "https://rahma1205.github.io/MedTrade",
 
   "dependencies": {
