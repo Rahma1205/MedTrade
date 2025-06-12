@@ -91,6 +91,9 @@ const Wallet = () => {
   };
 
   return (
+
+    <>
+
     <div style={{ padding: '20px', maxWidth: '400px' }}>
       <h3>Paymob Card Payment</h3>
       <input
@@ -107,11 +110,20 @@ const Wallet = () => {
         onChange={(e) => setAmount(Number(e.target.value))}
         style={{ display: 'block', marginBottom: '10px', width: '100%' }}
       />
-      <button onClick={handlePayment} style={{ padding: '10px 20px' }}>
+     
+       <button onClick={handlePayment} style={{ padding: '10px 20px' }}>
         Pay Now
       </button>
+      
     </div>
+
+
+
+
+</>
+    
   );
 };
+
 
 export default Wallet;

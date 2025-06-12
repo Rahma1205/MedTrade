@@ -15,7 +15,7 @@ export default function SignUp({ saveUserData }) {
   async function handleRegister(values) {
     setIsLoading(true);
     try {
-      const { data, token } = await axios.post('api/register', values);
+      const { data, token } = await axios.post('/api/register', values);
       if (data.message === 'Your account created successfully') {
         localStorage.setItem('userToken', token);
         localStorage.setItem('userData', JSON.stringify(data.user));

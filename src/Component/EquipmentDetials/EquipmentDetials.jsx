@@ -21,7 +21,7 @@ function ContactForm({ receiverId, seller, listing, token }) {
 
     setLoadingMessages(true);
     axios
-      .get(`/chat/messages/${receiverId}`, {
+      .get(`https://medtrade.wghtk.com/chat/messages/${receiverId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
