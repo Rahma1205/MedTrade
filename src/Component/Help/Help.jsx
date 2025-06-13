@@ -16,7 +16,7 @@ export default function Help() {
                 href="mailto:support@example.com"
                 className="text-primary text-decoration-underline"
               >
-                support@example.com
+                MedTrade@gmail.com
               </a>
             </p>
           </div>

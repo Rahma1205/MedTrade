@@ -87,7 +87,7 @@ alert(error);    }
               <div className="col-md-4 mb-4" key={item.id}>
                 <div className="card h-100 shadow-sm custom-card-hover d-flex flex-column overflow-hidden">
                   <img
-                    src={item.Main_image || '/images/no-image.png'}
+                    src={`https://medtrade.wghtk.com/storage/${item.image}` || '/images/no-image.png'}
                     className="card-img-top"
                     alt={item.title || item.name}
                     style={{ height: '200px', objectFit: 'cover' }}

@@ -199,7 +199,10 @@ i18n
     "priceLabel": "Price (in EGP)",
     "pricePlaceholder": "Enter equipment price",
     "conditionLabel": "Condition",
-    "conditionPlaceholder": "Select condition",
+    "conditionPlaceholder": "Select condition", "feeMessage": "A fee will be charged:",
+  "confirmSubmit": "Do you want to continue?",
+  "cancelledByUser": "Submission was cancelled by the user.",
+  "invalidPrice": "Please enter a valid price.",
     condition: {
       "brandNew": "Brand new",
       "likeNew": "Like new",
@@ -457,6 +460,8 @@ i18n
   "phone": "Phone",
   "address": "Address",
   "submitRequest": "Submit Request",
+    "confirmMaintenance": "The maintenance fee is 300 EGP. Do you want to proceed?"
+,
   "maintenance": {
   "header": "Maintenance Requests",
   "loading": "Loading maintenance requests...",
@@ -516,8 +521,31 @@ i18n
   "donateOne": "Donate +1",
   "donationSuccess": "Donation successful!",
   "donationFailed": "Donation failed. Please try again.",
-  "AcceptNgoRequest":"Accept NGO Donation Requests"
+  "AcceptNgoRequest":"Accept NGO Donation Requests",
+
+  "inspection": {
+    "title": "Inspection",
+    "heading": "Inspection Service",
+    "description": "We offer a trusted equipment inspection service to ensure quality and safety.",
+    "fee": "Fee: 70 EGP",
+    "contactMessage": "If you want to inspect an equipment, please contact us:",
+    "contactButton": "Contact Us at MedTrade@gmail.com"
+  }  ,
   
+  "wallet": {
+    "title": "Pay with Paymob",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email",
+    "amountLabel": "Amount (EGP)",
+    "amountPlaceholder": "Enter amount to pay",
+    "payNow": "Pay Now",
+    "loading": "Processing...",
+    "validationError": "Please enter a valid email and amount",
+    "paymentFailed": "Payment failed",
+    "unknownError": "An unknown error occurred",
+    "urlError": "Missing valid email or amount in URL"
+  },
+  "WalletRecharge":"Wallet Recharge"
         },
         
          
@@ -716,6 +744,10 @@ i18n
     "pricePlaceholder": "أدخل سعر الجهاز",
     "conditionLabel": "الحالة",
     "conditionPlaceholder": "اختر حالة الجهاز",
+    "confirmFeeMessage": "A platform fee of {{fee}} EGP will be applied. Do you want to proceed?",
+  "confirmTitle": "Confirm Listing",
+  "confirmYes": "Yes, submit",
+  "confirmNo": "No, cancel",
     "condition": {
       "brandNew": "جديد تمامًا",
       "likeNew": "مثل الجديد",
@@ -978,6 +1010,8 @@ i18n
   "phone": "رقم الهاتف",
   "address": "العنوان",
   "submitRequest": "إرسال الطلب",
+    "confirmMaintenance": "رسوم الصيانة 300 جنيه. هل تريد المتابعة؟"
+,
   
   "maintenance": {
     "header": "تقارير الصيانة",
@@ -1042,8 +1076,27 @@ i18n
   "donationSuccess": "تم التبرع بنجاح!",
   "donationFailed": "فشل في التبرع. حاول مرة أخرى.",
     "AcceptNgoRequest":"قبول طلبات التبرع من الجمعيات"
-
-   },
+, "inspection": {
+    "title": "فحص",
+    "heading": "خدمة الفحص",
+    "description": "نحن نقدم خدمة فحص موثوقة للمعدات لضمان الجودة والسلامة.",
+    "fee": "الرسوم: ٧٠ جنيه",
+    "contactMessage": "إذا كنت ترغب في فحص جهاز، يرجى التواصل معنا:",
+    "contactButton": "تواصل معنا على MedTrade@gmail.com"
+  },
+  "wallet": {
+    "title": "ادفع عبر Paymob",
+    "emailLabel": "البريد الإلكتروني",
+    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "amountLabel": "المبلغ (بالجنيه)",
+    "amountPlaceholder": "أدخل المبلغ المراد دفعه",
+    "payNow": "ادفع الآن",
+    "loading": "جارٍ المعالجة...",
+    "validationError": "يرجى إدخال بريد إلكتروني صحيح ومبلغ صالح",
+    "paymentFailed": "فشل الدفع",
+    "unknownError": "حدث خطأ غير معروف",
+    "urlError": "لا يوجد بريد إلكتروني أو مبلغ صالح في الرابط"
+  } ,"WalletRecharge":"شحن المحفظه"  },
         
       }
     },

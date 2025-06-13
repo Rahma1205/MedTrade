@@ -25,29 +25,42 @@ function MaintainesePage({userData}) {
       phone: Yup.string().required("Phone is required"),
       address: Yup.string().required("Address is required"),
     }),
-    onSubmit: async (values, { resetForm }) => {
-      try {
-        const { data } = await axios.post(
-          "/api/makemaintenance",
-          values,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+   onSubmit: async (values, { resetForm }) => {
 
-        if (data.message =='Maintenance requested successfully'){
+      const fee = 300;
+  const userWallet = userData?.wallet || 0;
+  const checkOut = userWallet - fee;
 
-           toast.success("Request sent successfully");
-        resetForm();
-        }
-       
-      } catch (error) {
-        toast.error("Failed to send maintenance request");
-        console.error(error);
+  if (checkOut < 0) {
+    alert("You don't have enough balance to subscribe.");
+    return;
+  }
+  const userConfirmed = window.confirm("The maintenance fee is 300 EGP. Do you want to proceed?");
+  if (!userConfirmed) {
+    return; 
+  }
+
+  try {
+    const { data } = await axios.post(
+      "/api/makemaintenance",
+      values,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       }
-    },
+    );
+
+    if (data.message === 'Maintenance requested successfully') {
+      toast.success("Request sent successfully");
+      resetForm();
+    }
+  } catch (error) {
+    toast.error("Failed to send maintenance request");
+    console.error(error);
+  }
+}
+
   });
 
   return (

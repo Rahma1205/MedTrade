@@ -34,6 +34,7 @@ import EquipmentListingAllNgo from './Component/EquipmentListingAllNgo/Equipment
 import { Toaster } from 'react-hot-toast';
 import EquipmentAcceptingNgo from './Component/EquipmentAcceptingNgo/EquipmentAcceptingNgo';
 import Wallet from './Wallet';
+import Inspection from './Component/Inespection/Inespection';
 
 function App() {
 
@@ -79,7 +80,9 @@ function App() {
       { path: '/EquipmentListingNgo', element:< EquipmentListingNgo userData={userData} /> },
       { path: '/EquipmentListingAllNgo', element:< EquipmentListingAllNgo userData={userData} /> },
       { path: '/EquipmentAcceptingNgo', element:< EquipmentAcceptingNgo userData={userData} /> },
-      { path: '/Wallet', element:< Wallet  /> },
+      { path: '/Wallet', element:< Wallet  userData={userData}/> },
+            { path: '/Inspection', element:< Inspection  /> },
+
 
       { path: '*', element: <Notfound /> },
     ]

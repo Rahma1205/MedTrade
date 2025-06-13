@@ -17,7 +17,7 @@ export default function FilteredProducts() {
   const isArabic = i18n.language === 'ar';
 
   useEffect(() => {
-    axios.get('/api') 
+    axios.get('https://medtrade.wghtk.com/api') 
       .then((res) => {
         const all = Array.isArray(res.data.data) ? res.data.data : [];
         const valid = all.filter(

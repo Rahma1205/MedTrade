@@ -123,6 +123,11 @@ export default function NavBar({ userData, Logout }) {
                       {t('SubscriptionPage')}
                     </Link>
                   </li>
+                  <li>
+                    <Link className="dropdown-item text-muted primary-hover" to="/Inspection">
+                      {t('inspection.title')}
+                    </Link>
+                  </li>
 
                   
                 </ul>

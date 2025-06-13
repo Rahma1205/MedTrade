@@ -58,63 +58,80 @@ export default function AddEquipment({userData}) {
     setIsSuccess(null);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (!formData.mainImage) {
-      setMessage(t("addequipment.mainImageRequired"));
+  if (!formData.mainImage) {
+    setMessage(t("addequipment.mainImageRequired"));
+    setIsSuccess(false);
+    return;
+  }
+ 
+  const priceValue = parseFloat(formData.price);
+  if (isNaN(priceValue)) {
+    setMessage(t("addequipment.invalidPrice"));
+    setIsSuccess(false);
+    return;
+  }
+
+const fee = (priceValue * 0.01) + 20;
+const finalPrice = parseFloat((priceValue + fee).toFixed(2)); 
+ const userWallet = userData?.wallet || 0;
+  const checkOut = userWallet - fee;
+
+  if (checkOut < 0) {
+    alert("You don't have enough balance to pay equipment fee.");
+    return;
+  }
+  const confirmed = window.confirm(`${t("addequipment.feeMessage")} ${fee.toFixed(2)} EGP. ${t("addequipment.confirmSubmit")}`);
+  if (!confirmed) {
+    setMessage(t("addequipment.cancelledByUser"));
+    setIsSuccess(false);
+    return;
+  }
+
+  setLoading(true);
+  setMessage("");
+  setIsSuccess(null);
+  try {
+    const data = new FormData();
+    data.append("title", formData.title);
+    data.append("desc", formData.desc);
+    data.append("price", finalPrice);
+    data.append("condition", formData.condition);
+    data.append("category", formData.category);
+    data.append("donation", formData.donation);
+    data.append("Main_image", formData.mainImage);
+    formData.images.forEach((img, idx) => {
+      if (img) data.append(`image${idx + 1}`, img);
+    });
+
+    const userToken = userData.access_token;
+
+    const response = await axios.post("/api/insertProduct", data, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${userToken}`,
+      },
+    });
+
+    if (response.status === 200) {
+      setMessage(response.data.message || t("addequipment.success"));
+      setIsSuccess(true);
+      resetForm();
+      e.target.reset();
+    } else {
+      setMessage(response.data.message || t("addequipment.error"));
       setIsSuccess(false);
-      return;
     }
+  } catch (error) {
+    setMessage(error?.response?.data?.message || t("addequipment.somethingWrong"));
+    setIsSuccess(false);
+  } finally {
+    setLoading(false);
+  }
+};
 
-    setLoading(true);
-    setMessage("");
-    setIsSuccess(null);
-
-    try {
-      const data = new FormData();
-      data.append("title", formData.title);
-      data.append("desc", formData.desc);
-      data.append("price", formData.price);
-      data.append("condition", formData.condition);
-      data.append("category", formData.category);
-      data.append("donation", formData.donation);
-      data.append("Main_image", formData.mainImage);
-      formData.images.forEach((img, idx) => {
-        if (img) data.append(`image${idx + 1}`, img);
-      });
-
-      const userToken = userData.access_token;
-
-      const response = await axios.post(
-        "/api/insertProduct",
-        data,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            Authorization: `Bearer ${userToken}`,
-          },
-        }
-      );
-
-      if (response.status === 200) {
-        setMessage(response.data.message || t("addequipment.success"));
-        setIsSuccess(true);
-        resetForm();
-        e.target.reset();
-
-      } else {
-        setMessage(response.data.message || t("addequipment.error"));
-        setIsSuccess(false);
-
-      }
-    } catch (error) {
-      setMessage(error.response?.data?.message || t("addequipment.somethingWrong"));
-      setIsSuccess(false);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
 

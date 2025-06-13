@@ -10,13 +10,14 @@ export default function MyProfile({ userData }) {
 
   
   const { t, i18n } = useTranslation();
-  const [profile, setProfile] = useState('null');
+  const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("listings");
   const [deletingId, setDeletingId] = useState(null);
   const [markingId, setMarkingId] = useState(null);
   const [aiSuggestions, setAiSuggestions] = useState([]);
   const token = userData?.access_token;
+  const isArabic = i18n.language === 'ar';
 
   const [surveyData, setSurveyData] = useState({
     age: "",
@@ -132,7 +133,7 @@ export default function MyProfile({ userData }) {
   };
 
   const handleSubscription = async (productId) => {
-  const fee = 5;
+  const fee = 50;
   const userWallet = userData?.wallet || 0;
   const checkOut = userWallet - fee;
 
@@ -451,8 +452,11 @@ const equipmentTitles = surveyRes.data.user_data.question.map(
         );
 
       case "messages":
+        <p>No Messages (Comming Soon)</p>
       case "orders":
+         <p>No Orders (Comming Soon)</p>
       case "request":
+        <p>No Requests (Comming Soon)</p>
       case "ai_suggestion":
         return(  
     <div className="row mt-4">
@@ -518,13 +522,17 @@ const equipmentTitles = surveyRes.data.user_data.question.map(
       case "wallet":
         return (
           <>
-  <Link
-  to="/WalletRecharge"
- 
-  className="btn btn-primary px-4 py-2 fw-semibold"
->
-    {t('WalletRecharge')}
-</Link>
+  <div className="container mt-4">
+      <div className={isArabic ? 'text-start' : 'text-end'}>
+        <Link
+          to="/Wallet"
+          className="btn btn-primary px-4 py-2 fw-semibold"
+        >
+          {t('WalletRecharge')}
+        </Link>
+      </div>
+    </div>
+
            
           </>
          

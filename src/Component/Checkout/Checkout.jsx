@@ -33,8 +33,10 @@ function Checkout({ userData }) {
 
   const [orderDetails, setOrderDetails] = useState({
     subtotal: Number(productPrice) || 0,
-    shipping: 5,
-    total: (Number(productPrice) || 0) + 5,
+    shipping: 150,
+        inspection: 70,
+
+    total: (Number(productPrice) || 0) + 150+70,
   });
 
   useEffect(() => {
@@ -76,11 +78,14 @@ function Checkout({ userData }) {
 
   useEffect(() => {
     const sub = Number(productPrice) || 0;
-    const ship = 5;
+    const ship = 150;
+        const inspection = 70;
+
     setOrderDetails({
       subtotal: sub,
       shipping: ship,
-      total: sub + ship,
+      inspection:inspection,
+      total: sub + ship+inspection,
     });
   }, [productPrice]);
 
@@ -319,6 +324,10 @@ function Checkout({ userData }) {
               <div className="d-flex justify-content-between mb-2">
                 <span>{t("shipping")}</span>
                 <span>EGP {formatPrice(orderDetails.shipping)}</span>
+              </div>
+               <div className="d-flex justify-content-between mb-2">
+                <span>{t("inspection.title")}</span>
+                <span>EGP {formatPrice(orderDetails.inspection)}</span>
               </div>
               <hr />
               <div className="d-flex justify-content-between fw-bold">

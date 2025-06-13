@@ -19,7 +19,8 @@ export default function EquipmentListing() {
   async function getProducts() {
     try {
       setIsLoading(true);
-      const response = await axios.get('https://medtrade.wghtk.com/api');
+      const response = await axios.get('/api');
+      console.log(response);
       
       const filtered = (response.data.data || []).filter(
         (item) => item.available === 'inStock' && item.status === 'accepted'
